@@ -23,7 +23,7 @@ const Home = () => {
         <section className="cover__hero" aria-labelledby="hero-title">
           <p className="cover__eyebrow">Ship with confidence</p>
           <h1 id="hero-title" className="cover__headline">
-            Build, test, and deploy from one place.
+            Build, test, and deploy from one place...
           </h1>
           <p className="cover__lede">
             A clean frontend wired for your CI/CD pipeline—lint, build, and container

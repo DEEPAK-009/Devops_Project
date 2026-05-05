@@ -1,3 +1,12 @@
+# this file defines the CI pipeline for the project. It runs on every     push to the main branch and performs the following steps:
+    # 1. Checks out the code from the repository
+    # 2. Sets up Node.js environment
+    # 3. Installs the project dependencies
+    # 4. Lints the code to ensure code quality
+    # 5. Builds the project
+    # 6. Builds a Docker image for the application
+
+
 name: CI Pipeline
 
 on:
@@ -10,7 +19,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: frontend   # 👈 VERY IMPORTANT
+        working-directory: frontend  
 
     steps:
       - name: Checkout code
@@ -19,17 +28,13 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22   # 👈 matches your Docker fix
+          node-version: 22  
 
       - name: Install deps
         run: npm install
 
       - name: Lint
         run: npm run lint
-
-      # Optional (only if you added vitest)
-      # - name: Test
-      #   run: npm run test
 
       - name: Build
         run: npm run build
